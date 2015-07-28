@@ -8,11 +8,27 @@
   <packaging>jar</packaging>
 
   <name>JFCUtil</name>
-  <url>http://maven.apache.org</url>
+  <url>http://fabriziocelli.altervista.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+  
+  <licenses>
+    <license>
+      <name>Creative Commons Attribution-ShareAlike 4.0 International</name>
+      <url>http://creativecommons.org/licenses/by-sa/4.0/legalcode</url>
+    </license>
+  </licenses>
+  
+  <developers>
+    <developer>
+      <id>fcelli</id>
+      <name>Fabrizio Celli</name>
+      <url>http://fabriziocelli.altervista.org</url>
+      <email>fabriziocelli@altervista.org</email>
+    </developer>
+  </developers>
 
   <dependencies>
     <dependency>
