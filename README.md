@@ -4,9 +4,9 @@ Additional information can be found in the project's website (http://fabriziocel
 
 ## System Requirements
 
-- git >= 1.8.1.4
-- java >= 1.6
-- maven >= 3.0.3
+- java >= 1.6 (mandatory)
+- git >= 1.8.1.4  (to download the project from GitHub: other solutions may be adopted)
+- maven >= 3.0.3 (mandatory, to build the jar file)
 
 ## Building the jar
 First of all, download the project using `git`:  
