@@ -1,6 +1,6 @@
 # JFCUtil
 This is a Java API with utilities to work with files, strings and HTTP connections. 
-Additional information can be found in the project's website MAUI (http://fabriziocelli.altervista.org/guide/JFCUtil_en.html).
+Additional information can be found in the project's website (http://fabriziocelli.altervista.org/guide/JFCUtil_en.html).
 
 ## System Requirements
 
