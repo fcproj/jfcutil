@@ -170,22 +170,29 @@ public class Compressor {
 	 * Recursive procedure to tar.gz the directory and its content
 	 */
     private void addFileToTarGz(TarArchiveOutputStream tOut, File directory, String base) throws IOException {
-        String entryName = base + directory.getName();
-        TarArchiveEntry tarEntry = new TarArchiveEntry(directory, entryName);
-        tOut.putArchiveEntry(tarEntry);
+    	String entryName = base + directory.getName();
+		FileInputStream is = null;
+		TarArchiveEntry tarEntry = new TarArchiveEntry(directory, entryName);
+		tOut.putArchiveEntry(tarEntry);
 
-        if (directory.isFile()) {
-            IOUtils.copy(new FileInputStream(directory), tOut);
-            tOut.closeArchiveEntry();
-        } else {
-            tOut.closeArchiveEntry();
-            File[] children = directory.listFiles();
-            if (children != null){
-                for (File child : children) {
-                    addFileToTarGz(tOut, child, entryName + "/");
-                }
-            }
-        }
+		try {
+			if (directory.isFile()) {
+				is = new FileInputStream(directory);
+				IOUtils.copy(is, tOut);
+				tOut.closeArchiveEntry();
+			} else {
+				tOut.closeArchiveEntry();
+				File[] children = directory.listFiles();
+				if (children != null){
+					for (File child : children) {
+						addFileToTarGz(tOut, child, entryName + "/");
+					}
+				}
+			}
+		} finally {
+			//close streams
+			if(is!=null) is.close();
+		}
     }
 
 }
