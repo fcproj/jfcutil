@@ -1,6 +1,8 @@
 package org.jfcutils.util;
 
 import java.text.DecimalFormat;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 /**
@@ -76,7 +78,7 @@ public class StringUtils {
 		String format = String.format("%%0%dd", digits);
 		return String.format(format, number);
 	}
-	
+
 	/**
 	 * Format an integer passed as string to separate groups of three digits with spaces.
 	 * e.g.: 1000000 -> 1 000 000
@@ -120,7 +122,7 @@ public class StringUtils {
 		}
 		return s;
 	}
-	
+
 	/**
 	 * Format a number given as String using a separator.
 	 * For example, given the String "1000500000" and the separaator comma ",", returns the String "1,000,500,000"
@@ -133,4 +135,45 @@ public class StringUtils {
 		DecimalFormat formatter = new DecimalFormat("#"+separator+"###");
 		return formatter.format(amount);
 	}
+
+	/**
+	 * Remove non valid XML characters from a string
+	 * @param in the input string encoding the XML
+	 * @return the string encoding the XML without non valid characters
+	 */
+	public String stripNonValidXMLCharacters(String in) {
+		StringBuffer out = new StringBuffer(); // Used to hold the output.
+		char current; // Used to reference the current character.
+
+		if (in == null || ("".equals(in))) return ""; // vacancy test.
+		for (int i = 0; i < in.length(); i++) {
+			current = in.charAt(i); // NOTE: No IndexOutOfBoundsException caught here; it should not happen.
+			if ((current == 0x9) ||
+					(current == 0xA) ||
+					(current == 0xD) ||
+					((current >= 0x20) && (current <= 0xD7FF)) ||
+					((current >= 0xE000) && (current <= 0xFFFD)) ||
+					((current >= 0x10000) && (current <= 0x10FFFF)))
+				out.append(current);
+		}
+		return out.toString();
+	}   
+
+	/**
+	 * Split a string when an uppercase character is found.
+	 * @param source the string to split
+	 * @return a list of strings computed by splitting this string on uppercase charatcters, null if the source string is null
+	 */
+	public List<String> splitOnUpperCase(String source){
+		if(source!=null){
+			List<String> result = new LinkedList<String>();
+			String[] splitString = source.split("(?=\\p{Lu})");
+			for(String s: splitString)
+				result.add(s);
+			return result;
+		}
+		return null;
+	}
+	
+	
 }
