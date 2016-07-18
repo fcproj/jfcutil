@@ -23,7 +23,7 @@ public class DTDValidator {
 	/**
 	 * Recursively validate a directory of XML files against a DTD.
 	 * 
-	 * <br/>Example of usage:
+	 * <br>Example of usage:
 	 * <pre>
 	 * {@code
 	 * ValidateDTD val = new ValidateDTD();

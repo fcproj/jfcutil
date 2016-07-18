@@ -14,7 +14,7 @@ import java.util.Set;
 /**
  * Parse TXT files. Each line contains an entity of the result.
  * 
- * <br/>One example of usage:
+ * <br>One example of usage:
  * <pre>
  * {@code
  * TXTReader reader = new TXTReader();

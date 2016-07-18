@@ -27,6 +27,7 @@ public class Decompressor {
 	/**
 	 * List zip content
 	 * @param zipName the fullpath of the zip file
+	 * @return an array of strings listing the zip content
 	 */
 	public ArrayList<String> getZipContent(String zipName){
 		//result

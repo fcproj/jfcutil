@@ -40,6 +40,8 @@ public class EscapeCommonXML {
 	
 	/**
 	 * Unescape XML characters
+	 * @param test the string to unescape
+	 * @return the unescaped string
 	 */
 	public String unescapeXML(String text){
 		for(String key: basic_char.keySet()){

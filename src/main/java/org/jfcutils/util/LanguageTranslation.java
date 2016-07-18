@@ -2,9 +2,9 @@ package org.jfcutils.util;
 
 /**
  * Maps various English-languages formats. 
- * <br/>Currently supported languages are:
+ * <br>Currently supported languages are:
  * English, Spanish, French, Italian, German, Japanese, Thai, Chinese, Russian, Portuguese, Korean, Farsi, Latvian, Indonesian, Arabic
- * <br/>Translation to 3-digits format also supports:
+ * <br>Translation to 3-digits format also supports:
  * CZECH, SERBIAN, BULGARIAN, SWEDISH, HUNGARIAN, RUMENIAN, GEORGIAN, MOLDAVIAN, PILIPINO, SERBO-CROATIAN, FINNISH, HEBREW, CATALAN, LATIN, NORWEGIAN, 
  * VALENCIAN, POLISH, MALAY, TURKISH, SHONA
  * @author celli
@@ -101,7 +101,7 @@ public class LanguageTranslation {
 				}
 			}
 			else {
-				return docLanguage.toLowerCase();
+				return docLanguage;
 			}
 		}
 		return language;
@@ -113,16 +113,16 @@ public class LanguageTranslation {
 	 * @return the language expressed in the extended form, the original language if no conversion
 	 */
 	public String translate2ExtendedEnglish(String docLanguage){
-		String language = null;
-		if(docLanguage!=null){
+		if(docLanguage!=null && docLanguage.length()<=3){
 			String l = docLanguage.toUpperCase();
+			String language;
 			if (l.equals("EN") || l.equals("ENG")) {
 				language = "English";
-			} else if (l.equals("ES") || l.equals("ESP")) {
+			} else if (l.equals("ES") || l.equals("ESP") || l.equals("SPA")) {
 				language = "Spanish";
-			} else if (l.equals("FR") || l.equals("FRA")) {
+			} else if (l.equals("FR") || l.equals("FRA") || l.equals("FRE")) {
 				language = "French";
-			} else if (l.equals("IT") || l.equals("IRA")) {
+			} else if (l.equals("IT") || l.equals("ITA")) {
 				language = "Italian";
 			} else if (l.equals("DE") || l.equals("GER")) {
 				language = "German";
@@ -140,19 +140,44 @@ public class LanguageTranslation {
 				language = "Korean";
 			} else if (l.equals("UA") || l.equals("UKR")) {
 				language = "Ukrainian";
-			} else if (l.equals("FA") || l.equals("PERSIAN")) {
+			} else if (l.equals("FA") || l.equals("FAS") || l.equals("PER")) {
 				language = "Farsi";
-			} else if (l.equals("LV")) {
+			} else if (l.equals("LV") || l.equals("LAV")) {
 				language = "Latvian";
 			} else if (l.equals("IND") || l.equals("IN") || l.equals("ID")) {
 				language = "Indonesian";
-			} else if (l.equals("AR")) {
+			} else if (l.equals("AR") || l.equals("ARA")) {
 				language = "Arabic";
+			} else if (l.equals("POL")|| l.equals("PL")) {
+				language = "Polish";
+			} else if (l.equals("RUM")|| l.equals("RO")) {
+				language = "Romanian";
+			} else if (l.equals("SLV")|| l.equals("SL")) {
+				language = "Slovenian";
+			} else if (l.equals("DUT")|| l.equals("NL")) {
+				language = "Dutch";
+			} else if (l.equals("CZE")|| l.equals("CS")) {
+				language = "Czech";
+			} else if (l.equals("NOR")|| l.equals("NO")) {
+				language = "Norwegian";
+			} else if (l.equals("SLO")|| l.equals("SK")) {
+				language = "Slovak";
+			} else if (l.equals("HUN")|| l.equals("HU")) {
+				language = "Hungarian";
+			} else if (l.equals("SWE")|| l.equals("SV")) {
+				language = "Swedish";
+			} else if (l.equals("DAN")|| l.equals("DA")) {
+				language = "Danish";
+			} else if (l.equals("BUL")|| l.equals("BG")) {
+				language = "Bulgarian";
+			} else if (l.equals("SCR")|| l.equals("SH")) {
+				language = "Serbo-Croatian";
 			} else {
 				language = docLanguage;
 			}
+			return language;
 		}
-		return language;
+		return docLanguage;
 	}
 
 }

@@ -13,7 +13,7 @@ import org.jfcutils.files.read.BufferManager;
 /**
  * Makes HTTP requests changing the HTTP header.
  * 
- * <br/>Example of usage: 
+ * <br>Example of usage: 
  * <pre>
  * {@code
  * GETHttpRequest req = new GETHttpRequest();

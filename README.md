@@ -4,9 +4,9 @@ Additional information can be found in the project's website (http://fabriziocel
 
 ## System Requirements
 
-- java >= 1.6 (mandatory)
-- git >= 1.8.1.4  (to download the project from GitHub: other solutions may be adopted)
-- maven >= 3.0.3 (mandatory, to build the jar file)
+- git >= 1.8.1.4
+- java >= 1.6
+- maven >= 3.0.3
 
 ## Building the jar
 First of all, download the project using `git`:  
@@ -15,6 +15,10 @@ First of all, download the project using `git`:
   
 Then, build the jar file:  
 `cd jfcutil/`   
-`mvn clean install`  
+`mvn clean package`  
 
-You can now find the jar in the directory `target`
+You can now find some jars in the directory `target` (also available in the directory `compiled` of this project):
+
+- JFCUtil-$VERSION.jar does not include dependances
+- JFCUtil-$VERSION-shaded.jar includes all dependances
+- JFCUtil-$VERSION-javadoc.jar contains the javadoc

@@ -16,7 +16,7 @@ public class FileSearcher {
 	
 	/**
 	 * Recursively search a file in a directory given the filename.
-	 * <br/>Example:
+	 * <br>Example:
 	 * <pre>
 	 * {@code
 	 * SearchFile searcher = new SearchFile();

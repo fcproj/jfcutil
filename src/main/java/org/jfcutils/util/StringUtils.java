@@ -43,7 +43,7 @@ public class StringUtils {
 
 	/**
 	 * Check if a string is an integer
-	 * @param input
+	 * @param input the string to check
 	 * @return true if the string is an integer
 	 */
 	public boolean isInteger(String input) {  
@@ -58,7 +58,7 @@ public class StringUtils {
 
 	/**
 	 * Check if a string is a characters string
-	 * @param input
+	 * @param input the string to check
 	 * @return true if the string is a characters string
 	 */
 	public boolean isOnlyCharacterString(String input) {  
@@ -81,7 +81,7 @@ public class StringUtils {
 
 	/**
 	 * Format an integer passed as string to separate groups of three digits with spaces.
-	 * e.g.: 1000000 -> 1 000 000
+	 * e.g.: 1000000 becomes 1 000 000
 	 * @param number a source integer as string
 	 * @return a string that group three digits of a number
 	 */

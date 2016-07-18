@@ -173,7 +173,7 @@ public class TXTWriter {
 	 * @param filePath the fullpath of the file, together with file name and extension
 	 * @throws IOException
 	 */
-	public void writeLines(List<String> lines, String filePath) throws IOException{
+	public void writeLines(Collection<String> lines, String filePath) throws IOException{
 		//file writer
 		BufferedWriter out = new BufferedWriter(new FileWriter(filePath));
 		//timestamp
@@ -195,7 +195,7 @@ public class TXTWriter {
 	 * @param out the buffer
 	 * @throws IOException
 	 */
-	public synchronized void addLines(List<String> lines, BufferedWriter out) throws IOException{
+	public synchronized void addLines(Collection<String> lines, BufferedWriter out) throws IOException{
 		for(String line: lines){
 			out.write(line);
 			out.newLine();

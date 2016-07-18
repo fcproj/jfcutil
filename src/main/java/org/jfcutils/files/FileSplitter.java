@@ -20,6 +20,7 @@ public class FileSplitter {
 	/**
 	 * Split the file, according to the desired number of lines. Writes .txt files.
 	 * @param filename the fullpath of the file to be splitted
+	 * @param lines number of lines for splitting
 	 * @throws IOException
 	 */
 	public void getData(String filename, int lines) throws IOException {
@@ -75,7 +76,7 @@ public class FileSplitter {
 	 * 
 	 * Reads the parameters [number of lines] [filePathToSplit] and run the splitting
 	 * 
-	 * @param args
+	 * @param args number of lines AND path of file to split
 	 */
 	public static void main(String[] args) {
 		if (args.length != 2) {
