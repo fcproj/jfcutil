@@ -3,11 +3,11 @@ This is a Java API with utilities to work with files, strings and HTTP connectio
 
 ## Apache Maven Dependency Information
 
-`<dependency>
-    <groupId>com.github.fcproj</groupId>
-    <artifactId>JFCUtil</artifactId>
-    <version>2.0.1</version>
-</dependency>`
+`<dependency>  
+    <groupId>com.github.fcproj</groupId>  
+    <artifactId>JFCUtil</artifactId>  
+    <version>2.0.1</version>  
+</dependency>`  
 
 ## System Requirements
 
