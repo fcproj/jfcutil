@@ -40,7 +40,7 @@ public class Compressor {
      * 
 	 * @param directory the File of the directory
 	 * @param zipfile the output File
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public void zipDir(File directory, File zipfile) throws IOException {
 		URI base = directory.toURI();
@@ -141,7 +141,7 @@ public class Compressor {
 	 * Tar.gz a directory with all its content
 	 * @param directory the File of the directory
 	 * @param zipfile the output File
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public void tarGzDir(File directory, File zipfile) throws IOException {
 		FileOutputStream fOut = null;

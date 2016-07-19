@@ -2,17 +2,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.jfcutils</groupId>
+	<groupId>com.github.fcproj</groupId>
 	<artifactId>JFCUtil</artifactId>
 	<version>2.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>JFCUtil</name>
-	<url>http://fabriziocelli.altervista.org</url>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	<description>This is a Java API with utilities to work with files, strings and HTTP connections</description>
+	<url>https://github.com/fcproj/jfcutil</url>
 
 	<licenses>
 		<license>
@@ -23,12 +20,23 @@
 
 	<developers>
 		<developer>
-			<id>fcelli</id>
+			<id>fabrizio.celli</id>
 			<name>Fabrizio Celli</name>
 			<url>http://fabriziocelli.altervista.org</url>
 			<email>fabriziocelli@altervista.org</email>
 		</developer>
 	</developers>
+
+	<!-- Connection to the source control system -->
+	<scm>
+		<connection>scm:git:git://github.com/fcproj/jfcutil.git</connection>
+		<developerConnection>scm:git:ssh://github.com:fcproj/jfcutil.git</developerConnection>
+		<url>http://github.com/fcproj/jfcutil/tree/master</url>
+	</scm>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -64,10 +72,52 @@
 		</dependency>
 	</dependencies>
 
-	<description>This is a Java API with utilities to work with files, strings and HTTP connections</description>
+	<!-- To deploy to the OSSRH Nexus Repository Manager with the Nexus Staging 
+		Maven plugin -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
+
+			<!-- To deploy to the OSSRH Nexus Repository Manager: Nexus Staging Maven 
+				plugin -->
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+
+			<!-- To deploy to the OSSRH Nexus Repository Manager: GPG Signed Components -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 			<!-- MAVEN shade to add dependances to the JAR -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -99,10 +149,12 @@
 					</execution>
 				</executions>
 			</plugin>
+
 			<!-- javadoc -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -112,6 +164,21 @@
 						<configuration>
 							<failOnError>false</failOnError>
 						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- sources -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>

@@ -40,7 +40,7 @@ public class EscapeCommonXML {
 	
 	/**
 	 * Unescape XML characters
-	 * @param test the string to unescape
+	 * @param text the string to unescape
 	 * @return the unescaped string
 	 */
 	public String unescapeXML(String text){

@@ -17,6 +17,8 @@ public class MapUtil {
 	/**
 	 * Sort a Map by Value
 	 * @param map the map to sort, the value type must be Comparable
+	 * @param <K> object to compare
+	 * @param <V> object to compare
 	 * @return the sorted map
 	 */
 	public static <K, V extends Comparable<? super V>> Map<K, V> sortByValueDescending( Map<K, V> map ) {

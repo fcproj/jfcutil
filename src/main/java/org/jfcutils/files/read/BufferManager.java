@@ -13,7 +13,7 @@ public class BufferManager {
 	/**
 	 * Print the content of a buffer in the standard output
 	 * @param inMessage the bufferReader
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public void printBufferedReader(BufferedReader inMessage) throws IOException{
 		String strLine;
@@ -29,7 +29,7 @@ public class BufferManager {
 	 * Print the content of a buffer in a String
 	 * @param inMessage the bufferReader
 	 * @return the String containing the content of the BufferReader
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public String readBufferedReader(BufferedReader inMessage) throws IOException{
 		String strLine;

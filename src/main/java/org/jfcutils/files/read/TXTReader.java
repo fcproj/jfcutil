@@ -38,7 +38,7 @@ public class TXTReader {
 	 * Parse a text file of lines. Returns the list of lines.
 	 * @param filepath the physical path of the file
 	 * @return the mapping of a text file of lines
-	 * @throws FileNotFoundException
+	 * @throws FileNotFoundException FileNotFoundException
 	 */
 	public Set<String> parseTxt(String filepath) throws FileNotFoundException{
 		Set<String> result = new HashSet<String>();
@@ -67,7 +67,7 @@ public class TXTReader {
 	 * Parse a text file of lines having a pattern KEY\t|\tVALUE. Returns the mapping.
 	 * @param filepath the physical path of the file
 	 * @return the mapping of a text file of lines having a pattern KEY\t|\tVALUE
-	 * @throws FileNotFoundException
+	 * @throws FileNotFoundException FileNotFoundException
 	 */
 	public Map<String, String> parseTabPipeTxt(String filepath) throws FileNotFoundException{
 		Map<String, String> result = new HashMap<String, String>();
@@ -97,7 +97,7 @@ public class TXTReader {
 	 * Returns the mapping.
 	 * @param filepath the physical path of the file
 	 * @return the mapping of a text file of lines having a pattern key=value with unique keys
-	 * @throws FileNotFoundException
+	 * @throws FileNotFoundException FileNotFoundException
 	 */
 	public Map<String, String> parseEqualTxt(String filepath) throws FileNotFoundException{
 		Map<String, String> result = new HashMap<String, String>();
@@ -129,7 +129,7 @@ public class TXTReader {
 	 * Returns the mapping.
 	 * @param filepath the physical path of the file
 	 * @return the mapping of a text file of lines having a pattern key=value1,value2,value3,... with unique keys
-	 * @throws FileNotFoundException
+	 * @throws FileNotFoundException FileNotFoundException
 	 */
 	public Map<String, List<String>> parseEqualCommaListValueTxt(String filepath) throws FileNotFoundException{
 		Map<String, List<String>> result = new HashMap<String, List<String>>();
@@ -164,7 +164,7 @@ public class TXTReader {
 	 * Parse a text file of lines having a pattern key=value. The same key can be in more lines.
 	 * @param filepath the physical path of the file
 	 * @return the mapping of a text file of lines having a pattern key=value, with multiple values for the same key
-	 * @throws FileNotFoundException
+	 * @throws FileNotFoundException FileNotFoundException
 	 */
 	public Map<String, List<String>> parseEqualMultipleKeysTxt(String filepath) throws FileNotFoundException{
 		Map<String, List<String>> result = new HashMap<String, List<String>>();
@@ -201,7 +201,7 @@ public class TXTReader {
 	 * Parse a text file of lines having a pattern key=value. Returns the reverse mapping value=key.
 	 * @param filepath the physical path of the file
 	 * @return the reverse mapping of a text file of lines having a pattern key=value
-	 * @throws FileNotFoundException
+	 * @throws FileNotFoundException FileNotFoundException
 	 */
 	public Map<String, String> reverseParseEqualTxt(String filepath) throws FileNotFoundException{
 		Map<String, String> result = new HashMap<String, String>();

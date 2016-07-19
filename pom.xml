@@ -8,11 +8,8 @@
 	<packaging>jar</packaging>
 
 	<name>JFCUtil</name>
-	<url>http://fabriziocelli.altervista.org</url>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	<description>This is a Java API with utilities to work with files, strings and HTTP connections</description>
+	<url>https://github.com/fcproj/jfcutil</url>
 
 	<licenses>
 		<license>
@@ -23,12 +20,15 @@
 
 	<developers>
 		<developer>
-			<id>fcelli</id>
+			<id>fabrizio.celli</id>
 			<name>Fabrizio Celli</name>
 			<url>http://fabriziocelli.altervista.org</url>
-			<email>fabriziocelli@altervista.org</email>
 		</developer>
 	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -64,10 +64,9 @@
 		</dependency>
 	</dependencies>
 
-	<description>This is a Java API with utilities to work with files, strings and HTTP connections</description>
-
 	<build>
 		<plugins>
+
 			<!-- MAVEN shade to add dependances to the JAR -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -99,6 +98,7 @@
 					</execution>
 				</executions>
 			</plugin>
+
 			<!-- javadoc -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

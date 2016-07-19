@@ -15,7 +15,7 @@ public class ConvertEncoding {
 	 * Take a UTF8 file and generate an ASCII String
 	 * @param filePath the UTF8 filepath
 	 * @return the ASCII String of the file
-	 * @throws Exception
+	 * @throws Exception Exception
 	 */
 	public String convertFileUTF8ToAsici(String filePath) throws Exception{
 		/* Read in the utf8 file as a byte array from an input stream */

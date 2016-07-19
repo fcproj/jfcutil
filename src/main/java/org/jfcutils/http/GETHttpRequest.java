@@ -43,7 +43,7 @@ import org.jfcutils.files.read.BufferManager;
  * 
  * Makes HTTP requests following HTTP redirect (301, 302, 303).
  * 
- * <br/>Example of usage: 
+ * <br>Example of usage: 
  * <pre>
  * {@code
  * String url = "http://...";
@@ -64,7 +64,7 @@ public class GETHttpRequest {
 	 * @param header_map map of header options, nullable
 	 * @param connectionTimeoutMillis connection timeout in milliseconds, 0 means no timeout
 	 * @return the String of the content of the URI dereferencing
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public String dereferenceURI(String uri, Map<String, String> header_map, int connectionTimeoutMillis) throws IOException{
 		return (new BufferManager()).readBufferedReader(this.dereferenceURIReader(uri, header_map, connectionTimeoutMillis));
@@ -77,7 +77,7 @@ public class GETHttpRequest {
 	 * @param header_map map of header options, nullable
 	 * @param connectionTimeoutMillis connection timeout in milliseconds, 0 means no timeout
 	 * @return the BufferReader of the content of the URI dereferencing
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public BufferedReader dereferenceURIReader(String uri, Map<String, String> header_map, int connectionTimeoutMillis) throws IOException{
 		URL url = new URL(uri);
@@ -97,8 +97,8 @@ public class GETHttpRequest {
 	 * @param url the URL to read 
 	 * @param connectionTimeoutMillis connection timeout in milliseconds, 0 means no timeout
 	 * @return the content from an HTTP URL with an HTTP redirect (301, 302, 303)
-	 * @throws IOException 
-	 * @throws MalformedURLException 
+	 * @throws IOException IOException
+	 * @throws MalformedURLException MalformedURLException
 	 */
 	public String getUrlContentWithRedirect(String url, int connectionTimeoutMillis) throws MalformedURLException, IOException{
 		HttpURLConnection conn = this.openConnection(new URL(url), connectionTimeoutMillis);
@@ -142,7 +142,7 @@ public class GETHttpRequest {
 	 * Extract the content from an HttpURLConnection
 	 * @param conn the connection object to read
 	 * @return the content of the HttpURLConnection
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public String getContentFromConnection(HttpURLConnection conn) throws IOException{
 		BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));

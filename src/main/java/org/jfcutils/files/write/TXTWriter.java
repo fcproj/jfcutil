@@ -22,7 +22,7 @@ public class TXTWriter {
 	 * @param content the string to be written
 	 * @param filePath the fullpath of the file, together with file name and extension
 	 * @param addNewLine if true, the method appends a String and add a \n to the text file
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public void appendString(String content, String filePath, boolean addNewLine) throws IOException{
 		//file writer
@@ -39,7 +39,7 @@ public class TXTWriter {
 	 * @param content the Collection to be written
 	 * @param filePath the fullpath of the file, together with file name and extension
 	 * @param addNewLine if true, the method appends a String and add a \n to the text file
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public void appendStrings(Collection<String> content, String filePath, boolean addNewLine) throws IOException{
 		//file writer
@@ -58,7 +58,7 @@ public class TXTWriter {
 	 * Write a String in a text file
 	 * @param content the string to be written
 	 * @param filePath the fullpath of the file, together with file name and extension
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public void writeString(String content, String filePath) throws IOException{
 		//file writer
@@ -72,7 +72,7 @@ public class TXTWriter {
 	 * Write a StringBuffer in a text file 
 	 * @param stringBuffer the string buffer
 	 * @param filePath the full file name
-	 * @throws IOException 
+	 * @throws IOException IOException
 	 */
 	public void writeStringBuffer(StringBuffer stringBuffer, String filePath) throws IOException {
 		this.writeString(stringBuffer.toString(), filePath);
@@ -82,7 +82,7 @@ public class TXTWriter {
 	 * Add a line on a text file already existing. 
 	 * @param line the line to add
 	 * @param out the buffer
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public synchronized void addLine(String line, BufferedWriter out) throws IOException{
 		out.write(line);
@@ -95,7 +95,7 @@ public class TXTWriter {
 	 * Add a timestamp at the beginning #yyyy/MM/dd HH:mm:ss
 	 * @param string2string a map of string
 	 * @param filePath the fullpath of the file, together with file name and extension
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public void writeMapString(Map<String, String> string2string, String filePath) throws IOException{
 		//file writer
@@ -120,7 +120,7 @@ public class TXTWriter {
 	 * Add a timestamp at the beginning #yyyy/MM/dd HH:mm:ss
 	 * @param string2list a map of List of Strings
 	 * @param filePath the fullpath of the file, together with file name and extension
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public void writeMapListString(Map<String, List<String>> string2list, String filePath) throws IOException{
 		//file writer
@@ -149,7 +149,7 @@ public class TXTWriter {
 	 * Add a Map of List of Strings on a text file already existing. Each line is a map entry in the form key=value1,value2,...
 	 * @param string2list a map of List of Strings
 	 * @param out the buffer
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public synchronized void addMapListString(Map<String, List<String>> string2list, BufferedWriter out) throws IOException{
 		for(String key: string2list.keySet()){
@@ -171,7 +171,7 @@ public class TXTWriter {
 	 * Add a timestamp at the beginning #yyyy/MM/dd HH:mm:ss
 	 * @param lines a set of string
 	 * @param filePath the fullpath of the file, together with file name and extension
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public void writeLines(Collection<String> lines, String filePath) throws IOException{
 		//file writer
@@ -193,7 +193,7 @@ public class TXTWriter {
 	 * Add a list of lines on a text file already existing. 
 	 * @param lines the list of lines to add
 	 * @param out the buffer
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public synchronized void addLines(Collection<String> lines, BufferedWriter out) throws IOException{
 		for(String line: lines){

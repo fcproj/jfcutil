@@ -12,7 +12,7 @@ import org.apache.commons.codec.binary.Base64;
 /**
  * Client for RESTful web services. Allows to send POST, GET, PUT, and DELETE requests to a web service.
  * In case of POST and PUT, a payload and the content-type are required. 
- * In case of authentication, password is encoded Base64. Authentication is optional, thus username and passwor can be null.
+ * In case of authentication, password is encoded Base64. Authentication is optional, thus username and password can be null.
  * 
  * <br>
  * Example of usage of POST: 
@@ -55,7 +55,7 @@ public class RESTClient {
 	 * @param method POST or PUT
 	 * @param username (optional) in case of authentication, can be null
 	 * @param password (optional) in case of authentication, can be null. This password is encoded using Base64.
-	 * @throws IOException
+	 * @throws IOException IOException
 	 * @return the response
 	 */
 	public String send_request(String url, String payload, String contentType, String method, String username, String password) throws IOException{
@@ -75,7 +75,7 @@ public class RESTClient {
 	 * @param method GET or DELETE
 	 * @param username (optional) in case of authentication, can be null
 	 * @param password (optional) in case of authentication, can be null. This password is encoded using Base64.
-	 * @throws IOException
+	 * @throws IOException IOException
 	 * @return the response
 	 */
 	public String send_request(String url, String method, String username, String password) throws IOException{

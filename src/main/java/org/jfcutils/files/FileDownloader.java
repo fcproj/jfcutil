@@ -20,8 +20,8 @@ public class FileDownloader {
 	 * @param url the url of the file
 	 * @param filePathName the fullpath of the output downloaded file, containing also file name and extension
 	 * @param readTimeoutInSeconds URL read timeout in seconds, 0 or negative mean no limit
-	 * @throws MalformedURLException
-	 * @throws IOException
+	 * @throws MalformedURLException MalformedURLException
+	 * @throws IOException IOException
 	 */
 	public void downloadFileFromURL(String url, String filePathName, int readTimeoutInSeconds) throws MalformedURLException, IOException{
 		

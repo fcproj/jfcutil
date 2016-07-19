@@ -38,8 +38,8 @@ public class DTDValidator {
 	 * 
 	 * @param sourceDir the root directory containing XML files to be validates
 	 * @param spf the sax parser
-	 * @throws SAXException
-	 * @throws ParserConfigurationException
+	 * @throws SAXException SAXException
+	 * @throws ParserConfigurationException ParserConfigurationException
 	 */
 	public void validateDir(File sourceDir, SAXParserFactory spf) throws SAXException, ParserConfigurationException {
 

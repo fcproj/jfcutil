@@ -21,7 +21,7 @@ public class FileSplitter {
 	 * Split the file, according to the desired number of lines. Writes .txt files.
 	 * @param filename the fullpath of the file to be splitted
 	 * @param lines number of lines for splitting
-	 * @throws IOException
+	 * @throws IOException IOException
 	 */
 	public void getData(String filename, int lines) throws IOException {
 		try {

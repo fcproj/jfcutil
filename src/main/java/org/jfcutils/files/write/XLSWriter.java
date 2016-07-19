@@ -24,9 +24,9 @@ public class XLSWriter {
 	 * Create an Excel file with a column with all elements of a set
 	 * @param elements rows of the column
 	 * @param filename the full path name of the output file
-	 * @throws IOException
-	 * @throws RowsExceededException
-	 * @throws WriteException
+	 * @throws IOException IOException
+	 * @throws RowsExceededException RowsExceededException
+	 * @throws WriteException WriteException
 	 */
 	public void writeExcelColumn(Set<String> elements, String filename) throws IOException, RowsExceededException, WriteException{
 		//create the workbook object
@@ -52,9 +52,9 @@ public class XLSWriter {
 	 * Create an Excel file with two columns with all elements of a map
 	 * @param elements data map to put in the excel file
 	 * @param filename the full path name of the output file
-	 * @throws IOException
-	 * @throws RowsExceededException
-	 * @throws WriteException
+	 * @throws IOException IOException
+	 * @throws RowsExceededException RowsExceededException
+	 * @throws WriteException WriteException
 	 */
 	public void writeExcelTwoColumns(Map<String, String> elements, String filename) throws IOException, RowsExceededException, WriteException{
 		//create the workbook object
